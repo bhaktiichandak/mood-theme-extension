@@ -1,5 +1,5 @@
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-    if (changeInfo.status === "complete" && tab.url.startsWith("http")) {
+    if (changeInfo.status === "complete" && tab.url && tab.url.startsWith("http")) {
         const hour = new Date().getHours();
         let mood;
         if (hour >= 6 && hour < 12) mood = "happy";
